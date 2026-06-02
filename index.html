@@ -33,8 +33,8 @@ a,button,[onclick]{cursor:pointer}
 .announce-bar a{color:#fff;text-decoration:underline}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;transition:background 0.4s,border-color 0.4s,top 0.3s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(248,247,244,0.97);border-bottom-color:var(--border);backdrop-filter:blur(12px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;transition:background 0.4s,border-color 0.4s,top 0.3s;border-bottom:1px solid var(--border);background:rgba(248,247,244,0.97);backdrop-filter:blur(12px)}
+nav.scrolled{border-bottom-color:rgba(0,0,0,0.1)}
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:var(--dark);text-decoration:none}
 .nav-logo span{color:var(--red)}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -241,7 +241,7 @@ footer{background:var(--dark);padding:60px 5% 30px;color:rgba(255,255,255,0.7)}
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <img src="logo.png" alt="AUTORAM Car Repair Service" style="height:52px;width:auto;display:block;mix-blend-mode:multiply"/>
+    <img src="logo.png" alt="AUTORAM Car Repair Service" style="height:52px;width:auto;display:block"/>
   </a>
   <ul class="nav-links">
     <li><a href="#process">How It Works</a></li>

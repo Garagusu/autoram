@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--red:#E8251A;--red2:#ff4136;--dark:#0A0A0A;--dark2:#111111;--dark3:#1A1A1A;--gray:#888;--light:#F5F5F0;--metal:#2A2A2A;--green:#22c55e}
+:root{--red:#E8251A;--red2:#ff4136;--dark:#F8F7F4;--dark2:#EFEFEC;--dark3:#E5E4E0;--gray:#6B6B6B;--light:#F5F5F0;--metal:#D8D7D3;--green:#22c55e}
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--light);font-family:'DM Sans',sans-serif;min-height:100vh}
 
@@ -126,7 +126,9 @@ nav{background:rgba(10,10,10,0.97);border-bottom:1px solid rgba(255,255,255,0.06
 <div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div></div>
 
 <nav>
-  <a href="index.html" class="nav-logo">AUTO<span>RAM</span></a>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="AUTORAM" style="height:44px;width:auto;display:block"/>
+  </a>
   <a href="index.html" class="nav-back">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     Back to Home
@@ -519,34 +521,46 @@ async function submitBooking(){
 }
 
 async function sendEmailNotification(booking) {
-  const prompt = `You are an email notification system for AUTORAM auto repair shop. 
-Generate a professional email notification for a new booking. 
-Return ONLY the email body text (no subject line, no JSON), ready to be read.
+  // Email notification via Anthropic API — logs to console during test phase
+  // TODO: replace with real email service (EmailJS / SendGrid) when going live
+  const ADMIN_EMAIL = 'autoramservice@gmail.com';
+
+  const prompt = `You are an email notification system for AUTORAM auto repair shop in Ottawa.
+A new booking has been submitted. Generate a clear, professional email notification body for the admin.
+Return ONLY the plain email body text — no subject line, no markdown, no preamble.
 
 Booking details:
-- Reference: ${booking.id}
-- Customer: ${booking.name}
+- Reference #: ${booking.id}
+- Customer Name: ${booking.name}
 - Phone: ${booking.phone}
 - Email: ${booking.email}
-- Service: ${booking.service}
+- Service Requested: ${booking.service}
 - Date: ${booking.date}
 - Time: ${booking.time}
+- Estimated Duration: ${booking.duration}
 - Vehicle: ${booking.vehicle || 'Not provided'}
+- License Plate: ${booking.plate || 'Not provided'}
 - Notes: ${booking.notes || 'None'}
+- Submitted At: ${new Date(booking.createdAt).toLocaleString('en-CA')}
 
-Write a clear, brief notification email for the admin team at AUTORAM.`;
+Admin panel: admin.html`;
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({
-      model:'claude-sonnet-4-20250514',
-      max_tokens:1000,
-      messages:[{role:'user',content:prompt}]
-    })
-  });
-  const data = await res.json();
-  console.log('Email notification content:', data.content?.[0]?.text);
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const emailBody = data.content?.[0]?.text || '';
+    console.log(`\n📧 EMAIL TO: ${ADMIN_EMAIL}\nSUBJECT: New Booking #${booking.id} — ${booking.service} on ${booking.date}\n\n${emailBody}`);
+  } catch(e) {
+    console.error('Email notification error:', e);
+  }
 }
 
 // Helpers

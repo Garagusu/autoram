@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AUTORAM — Auto Repair Ottawa</title>
-<meta name="description" content="AUTORAM is Ottawa's trusted auto repair shop at 1922 Merivale Rd. Expert mechanics, honest pricing, brakes, engine, tires, oil change, safety inspections."/>
+<title>AUTORAM — Auto Repair Ottawa | Merivale Rd</title>
+<meta name="description" content="AUTORAM is Ottawa's trusted auto repair shop at 1922 Merivale Rd. Certified mechanics, honest pricing, same-day brakes, engine, tires, oil change & safety inspections."/>
+<meta name="keywords" content="auto repair Ottawa, car mechanic Ottawa, brake repair Ottawa, oil change Ottawa, safety inspection Ottawa, Merivale auto repair"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet"/>
@@ -13,190 +14,246 @@
 :root{
   --red:#E8251A;
   --red2:#ff4136;
-  --dark:#F8F7F4;
-  --dark2:#EFEFEC;
-  --dark3:#E5E4E0;
+  --bg:#F8F7F4;
+  --bg2:#EFEFEC;
+  --bg3:#E5E4E0;
   --gray:#6B6B6B;
-  --light:#1A1A1A;
+  --dark:#1A1A1A;
   --metal:#D8D7D3;
+  --border:rgba(0,0,0,0.08);
 }
 html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--light);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+body{background:var(--bg);color:var(--dark);font-family:'DM Sans',sans-serif;overflow-x:hidden}
 *{cursor:auto}
 a,button,[onclick]{cursor:pointer}
 
-
+/* ANNOUNCEMENT BAR */
+.announce-bar{background:var(--dark);color:#fff;text-align:center;padding:10px 5%;font-size:13px;font-weight:500;letter-spacing:0.5px;position:relative}
+.announce-bar strong{color:var(--red)}
+.announce-bar a{color:#fff;text-decoration:underline}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;transition:background 0.4s,border-color 0.4s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(248,247,244,0.97);border-bottom-color:rgba(0,0,0,0.08);backdrop-filter:blur(12px)}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:#1A1A1A;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;transition:background 0.4s,border-color 0.4s,top 0.3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(248,247,244,0.97);border-bottom-color:var(--border);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:var(--dark);text-decoration:none}
 .nav-logo span{color:var(--red)}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:#555;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s}
-.nav-links a:hover{color:#1A1A1A}
-.nav-cta{background:var(--red);color:#fff;padding:10px 22px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s}
+.nav-links a:hover{color:var(--dark)}
+.nav-btns{display:flex;gap:0.75rem;align-items:center}
+.nav-cta{background:var(--red);color:#fff;padding:10px 22px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;text-decoration:none;transition:background 0.2s}
 .nav-cta:hover{background:var(--red2)}
+.nav-outline{background:transparent;border:1.5px solid var(--red);color:var(--red);padding:10px 22px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all 0.2s}
+.nav-outline:hover{background:var(--red);color:#fff}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 5%}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#F0EFEB 0%,#F8F7F4 40%,#F5F0EE 100%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,37,26,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(232,37,26,0.06) 1px,transparent 1px);background-size:60px 60px;opacity:0.6}
-.hero-line{position:absolute;top:0;left:20%;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(232,37,26,0.2),transparent)}
-.hero-line2{position:absolute;top:0;left:80%;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(232,37,26,0.15),transparent)}
-
-.hero-content{position:relative;z-index:2;max-width:800px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(232,37,26,0.08);border:1px solid rgba(232,37,26,0.25);color:var(--red2);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;margin-bottom:2rem}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 5% 60px}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#F0EFEB 0%,#F8F7F4 50%,#F5F0EE 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,37,26,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(232,37,26,0.05) 1px,transparent 1px);background-size:60px 60px;opacity:0.7}
+.hero-line{position:absolute;top:0;left:20%;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(232,37,26,0.18),transparent)}
+.hero-line2{position:absolute;top:0;right:15%;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(232,37,26,0.1),transparent)}
+.hero-content{position:relative;z-index:2;max-width:820px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(232,37,26,0.08);border:1px solid rgba(232,37,26,0.25);color:var(--red);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;margin-bottom:2rem}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 1.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,13vw,160px);line-height:0.9;letter-spacing:2px;margin-bottom:1.5rem}
-.hero h1 .line1{display:block;color:#1A1A1A}
-.hero h1 .line2{display:block;color:var(--red);-webkit-text-stroke:0px;text-shadow:0 0 60px rgba(232,37,26,0.4)}
-.hero h1 .line3{display:block;color:transparent;-webkit-text-stroke:1px rgba(0,0,0,0.15);font-size:clamp(60px,9vw,110px)}
-
-.hero-sub{font-size:18px;color:#555;max-width:480px;line-height:1.7;margin-bottom:2.5rem}
-.hero-sub strong{color:#1A1A1A}
-
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,12vw,150px);line-height:0.88;letter-spacing:2px;margin-bottom:1.5rem}
+.hero h1 .l1{display:block;color:var(--dark)}
+.hero h1 .l2{display:block;color:var(--red)}
+.hero h1 .l3{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(0,0,0,0.18);font-size:clamp(52px,8vw,100px)}
+.hero-sub{font-size:18px;color:#555;max-width:500px;line-height:1.75;margin-bottom:2.5rem}
+.hero-sub strong{color:var(--dark)}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
-.btn-primary{background:var(--red);color:#fff;padding:16px 36px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:background 0.2s,transform 0.2s}
+.btn-primary{background:var(--red);color:#fff;padding:16px 36px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:background 0.2s,transform 0.15s}
 .btn-primary:hover{background:var(--red2);transform:translateY(-2px)}
 .btn-primary svg{transition:transform 0.2s}
 .btn-primary:hover svg{transform:translateX(4px)}
-.btn-secondary{background:transparent;color:#1A1A1A;padding:16px 36px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(0,0,0,0.2);display:inline-flex;align-items:center;gap:10px;transition:border-color 0.2s,background 0.2s}
-.btn-secondary:hover{border-color:var(--red);background:rgba(232,37,26,0.06)}
-
-.hero-stats{display:flex;gap:2.5rem;padding-top:2.5rem;border-top:1px solid rgba(0,0,0,0.08)}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#1A1A1A;line-height:1}
+.btn-secondary{background:transparent;color:var(--dark);padding:16px 36px;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(0,0,0,0.2);display:inline-flex;align-items:center;gap:10px;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--red);color:var(--red)}
+.hero-stats{display:flex;gap:3rem;padding-top:2.5rem;border-top:1px solid rgba(0,0,0,0.1);flex-wrap:wrap}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--dark);line-height:1}
 .stat-num span{color:var(--red)}
-.stat-label{font-size:12px;color:#666;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.stat-label{font-size:11px;color:#777;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
 
 /* MARQUEE */
-.marquee-wrap{background:var(--red);padding:14px 0;overflow:hidden;position:relative}
-.marquee-track{display:flex;gap:0;animation:marquee 20s linear infinite;width:max-content}
-.marquee-item{white-space:nowrap;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:#fff;padding:0 30px}
-.marquee-item .dot{color:rgba(255,255,255,0.4);margin-left:30px}
+.marquee-wrap{background:var(--red);padding:13px 0;overflow:hidden}
+.marquee-track{display:flex;animation:marquee 22s linear infinite;width:max-content}
+.marquee-item{white-space:nowrap;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;color:#fff;padding:0 28px}
+.marquee-dot{color:rgba(255,255,255,0.4)}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+/* TRUST BADGES */
+.trust-bar{background:var(--dark);padding:22px 5%;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.75);font-size:13px;font-weight:500;letter-spacing:0.5px}
+.trust-badge svg{color:var(--red);flex-shrink:0}
+.trust-badge strong{color:#fff}
+
 /* SECTIONS */
-section{padding:100px 5%}
-.section-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem}
+section{padding:90px 5%}
+.section-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem}
 .section-label::before{content:'';width:24px;height:2px;background:var(--red)}
-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,80px);line-height:1;letter-spacing:1px;color:#1A1A1A}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,6vw,76px);line-height:1;letter-spacing:1px;color:var(--dark)}
 h2 em{font-style:normal;color:var(--red)}
 
+/* PROCESS */
+.process-bg{background:var(--bg2)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4rem;position:relative}
+.process-grid::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:2px;background:linear-gradient(to right,var(--red),rgba(232,37,26,0.15));z-index:0}
+.process-step{text-align:center;padding:0 20px;position:relative;z-index:1}
+.process-num{width:72px;height:72px;background:#fff;border:2px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);margin:0 auto 1.5rem;transition:all 0.3s}
+.process-step:hover .process-num{background:var(--red);color:#fff}
+.process-step h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dark);margin-bottom:0.5rem}
+.process-step p{font-size:13px;color:var(--gray);line-height:1.6}
+
 /* SERVICES */
-.services-bg{background:var(--dark2)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;margin-top:4rem;background:rgba(0,0,0,0.06)}
-.service-card{background:var(--dark2);padding:40px 32px;position:relative;overflow:hidden;transition:background 0.3s;cursor:default}
-.service-card::before{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width 0.4s ease}
-.service-card:hover{background:#DDDCDA}
-.service-card:hover::before{width:100%}
-.service-icon{width:52px;height:52px;margin-bottom:1.5rem;color:var(--red)}
-.service-card h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1A1A1A;margin-bottom:0.75rem}
-.service-card p{font-size:14px;color:#666;line-height:1.7}
-.service-num{position:absolute;top:20px;right:24px;font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(0,0,0,0.05);line-height:1}
+.services-bg{background:var(--bg)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;margin-top:4rem;background:rgba(0,0,0,0.07)}
+.service-card{background:var(--bg);padding:36px 30px;position:relative;overflow:hidden;transition:background 0.3s}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--red);transition:width 0.4s ease}
+.service-card:hover{background:var(--bg2)}
+.service-card:hover::after{width:100%}
+.service-icon{width:48px;height:48px;margin-bottom:1.5rem;color:var(--red)}
+.service-card h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dark);margin-bottom:0.6rem}
+.service-card p{font-size:14px;color:var(--gray);line-height:1.7}
+.service-num{position:absolute;top:16px;right:20px;font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(0,0,0,0.04);line-height:1}
 
 /* WHY US */
+.why-bg{background:var(--bg2)}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:4rem}
-@media(max-width:768px){.why-grid{grid-template-columns:1fr}}
-.why-list{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
-.why-item{display:flex;gap:1.5rem;padding:24px;background:var(--dark3);border-left:3px solid var(--red);transition:background 0.2s}
-.why-item:hover{background:#D0CFC9}
-.why-icon{width:44px;height:44px;background:rgba(232,37,26,0.08);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0}
-.why-item h4{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1A1A1A;margin-bottom:6px}
+.why-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.why-item{display:flex;gap:1.2rem;padding:20px 24px;background:var(--bg);border-left:3px solid var(--red);transition:background 0.2s,transform 0.2s}
+.why-item:hover{background:#DDDCDA;transform:translateX(4px)}
+.why-icon{width:40px;height:40px;background:rgba(232,37,26,0.08);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0}
+.why-item h4{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--dark);margin-bottom:4px}
 .why-item p{font-size:13px;color:#555;line-height:1.6}
-
 .why-visual{position:relative}
-.big-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,20vw,220px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(232,37,26,0.12);position:absolute;top:-30px;right:-20px;z-index:0;pointer-events:none}
-.why-card-stack{position:relative;z-index:1}
-.why-card-main{background:var(--dark3);border:1px solid rgba(0,0,0,0.08);padding:40px;margin-bottom:1rem}
-.why-card-main .num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--red);line-height:1}
-.why-card-main .label{font-size:13px;color:#666;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.big-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,18vw,200px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(232,37,26,0.1);position:absolute;top:-20px;right:-20px;pointer-events:none}
+.why-cards{position:relative;z-index:1}
+.why-card-main{background:var(--bg);border:1px solid var(--border);padding:36px;margin-bottom:1rem}
+.why-card-main .num{font-family:'Bebas Neue',sans-serif;font-size:68px;color:var(--red);line-height:1}
+.why-card-main .lbl{font-size:12px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
 .why-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.why-card-small{background:var(--dark3);border:1px solid rgba(0,0,0,0.08);padding:24px}
-.why-card-small .num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#1A1A1A;line-height:1}
+.why-card-small{background:var(--bg);border:1px solid var(--border);padding:22px}
+.why-card-small .num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--dark);line-height:1}
 .why-card-small .num span{color:var(--red)}
-.why-card-small .label{font-size:12px;color:#666;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.why-card-small .lbl{font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+
+/* BRANDS */
+.brands-bg{background:var(--bg3)}
+.brands-strip{display:flex;align-items:center;gap:0;overflow:hidden;margin-top:3rem}
+.brands-track{display:flex;align-items:center;gap:0;animation:marquee 30s linear infinite;width:max-content}
+.brand-item{padding:16px 40px;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;border-right:1px solid rgba(0,0,0,0.08);white-space:nowrap;transition:color 0.2s}
+.brand-item:hover{color:var(--red)}
 
 /* TESTIMONIALS */
-.testimonials-bg{background:var(--dark3)}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:4rem}
-.testi-card{background:var(--dark2);padding:36px;border:1px solid rgba(0,0,0,0.08);position:relative;transition:border-color 0.3s}
-.testi-card:hover{border-color:rgba(232,37,26,0.4)}
-.testi-card::before{content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;color:rgba(232,37,26,0.1);position:absolute;top:-10px;left:20px;line-height:1}
-.stars{display:flex;gap:3px;margin-bottom:1.2rem}
-.star{color:var(--red);font-size:14px}
-.testi-text{font-size:15px;color:#555;line-height:1.7;margin-bottom:1.5rem;position:relative}
-.testi-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(0,0,0,0.08);padding-top:1.2rem}
-.testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:#fff;flex-shrink:0}
-.testi-name{font-weight:600;font-size:14px;color:#1A1A1A}
-.testi-car{font-size:12px;color:var(--gray);margin-top:2px}
+.reviews-bg{background:var(--bg)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3.5rem}
+.testi-card{background:#fff;padding:32px;border:1px solid var(--border);position:relative;transition:border-color 0.3s,transform 0.2s;border-radius:2px}
+.testi-card:hover{border-color:rgba(232,37,26,0.3);transform:translateY(-3px)}
+.testi-card::before{content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:110px;color:rgba(232,37,26,0.07);position:absolute;top:-8px;left:18px;line-height:1;pointer-events:none}
+.stars{display:flex;gap:3px;margin-bottom:1rem}
+.star{color:#F59E0B;font-size:15px}
+.testi-text{font-size:14px;color:#444;line-height:1.75;margin-bottom:1.5rem;position:relative}
+.testi-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:1rem}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:#fff;flex-shrink:0}
+.testi-name{font-weight:600;font-size:14px;color:var(--dark)}
+.testi-source{font-size:11px;color:var(--gray);margin-top:2px;display:flex;align-items:center;gap:4px}
+.review-cta{text-align:center;margin-top:3rem}
+.review-cta a{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(0,0,0,0.12);color:var(--dark);padding:14px 28px;text-decoration:none;font-weight:600;font-size:14px;transition:all 0.2s;border-radius:2px}
+.review-cta a:hover{border-color:rgba(232,37,26,0.4);color:var(--red)}
+.review-cta p{color:var(--gray);font-size:13px;margin-bottom:1rem}
+
+/* FAQ */
+.faq-bg{background:var(--bg2)}
+.faq-list{margin-top:3rem;max-width:780px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:0.5px;color:var(--dark);display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color 0.2s}
+.faq-q:hover{color:var(--red)}
+.faq-q .arrow{font-size:20px;color:var(--red);transition:transform 0.3s;flex-shrink:0}
+.faq-q.open .arrow{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s}
+.faq-a p{padding-bottom:20px;font-size:15px;color:#555;line-height:1.75}
 
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:4rem}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
-.contact-info{display:flex;flex-direction:column;gap:2rem}
-.contact-item{display:flex;gap:1.2rem;align-items:flex-start}
-.contact-icon{width:48px;height:48px;background:rgba(232,37,26,0.08);border:1px solid rgba(232,37,26,0.25);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0}
-.contact-item h4{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:6px}
-.contact-item p,.contact-item a{font-size:17px;color:#1A1A1A;text-decoration:none;font-weight:500}
+.contact-bg{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:4rem}
+.contact-info{display:flex;flex-direction:column;gap:1.75rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
+.contact-icon{width:46px;height:46px;background:rgba(232,37,26,0.08);border:1px solid rgba(232,37,26,0.2);display:flex;align-items:center;justify-content:center;color:var(--red);flex-shrink:0}
+.contact-item h4{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;margin-bottom:4px}
+.contact-item p,.contact-item a{font-size:16px;color:var(--dark);text-decoration:none;font-weight:500}
 .contact-item a:hover{color:var(--red)}
-
-.hours-table{width:100%;border-collapse:collapse;margin-top:2rem}
-.hours-table tr{border-bottom:1px solid rgba(0,0,0,0.06)}
-.hours-table td{padding:12px 0;font-size:14px}
-.hours-table td:first-child{color:#666}
-.hours-table td:last-child{text-align:right;color:#1A1A1A;font-weight:500}
-.hours-table .today td{color:var(--red)}
-.hours-table .today td:last-child{color:var(--red2)}
-
-.map-placeholder{background:var(--dark3);border:1px solid rgba(0,0,0,0.06);height:100%;min-height:350px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden}
-.map-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(232,37,26,0.04) 20px,rgba(232,37,26,0.04) 21px)}
-.map-icon{color:var(--red);opacity:0.6}
-.map-address{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;text-align:center;color:#1A1A1A}
-.map-address span{display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#666;font-weight:400;letter-spacing:0;margin-top:4px}
-.map-link{background:var(--red);color:#fff;padding:12px 28px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;position:relative;z-index:1}
-.map-link:hover{background:var(--red2)}
+.hours-table{width:100%;border-collapse:collapse;margin-top:1.5rem}
+.hours-table tr{border-bottom:1px solid var(--border)}
+.hours-table td{padding:11px 0;font-size:14px}
+.hours-table td:first-child{color:var(--gray)}
+.hours-table td:last-child{text-align:right;color:var(--dark);font-weight:500}
+.map-embed{width:100%;height:100%;min-height:400px;border:0;filter:grayscale(20%)}
 
 /* FOOTER */
-footer{background:#E5E4E0;padding:40px 5%;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,0,0,0.08);flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:#1A1A1A}
-.footer-logo span{color:var(--red)}
-footer p{font-size:13px;color:#666}
+footer{background:var(--dark);padding:60px 5% 30px;color:rgba(255,255,255,0.7)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:3rem}
+.footer-brand .logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:#fff;margin-bottom:0.75rem}
+.footer-brand .logo span{color:var(--red)}
+.footer-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.5);max-width:260px}
+.footer-col h5{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:0.6rem;transition:color 0.2s}
+.footer-col a:hover{color:var(--red)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:0.5rem}
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+/* FLOATING CALL BUTTON */
+.float-call{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;flex-direction:column;align-items:center;gap:6px}
+.float-btn{background:var(--red);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(232,37,26,0.4);transition:transform 0.2s,box-shadow 0.2s;animation:floatPulse 2.5s ease-in-out infinite}
+.float-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(232,37,26,0.5)}
+@keyframes floatPulse{0%,100%{box-shadow:0 4px 20px rgba(232,37,26,0.4),0 0 0 0 rgba(232,37,26,0.3)}50%{box-shadow:0 4px 20px rgba(232,37,26,0.4),0 0 0 12px rgba(232,37,26,0)}}
+.float-label{background:var(--dark);color:#fff;font-size:11px;font-weight:600;letter-spacing:1px;padding:4px 10px;white-space:nowrap}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.1s}
-.reveal-delay-2{transition-delay:0.2s}
-.reveal-delay-3{transition-delay:0.3s}
-.reveal-delay-4{transition-delay:0.4s}
-.reveal-delay-5{transition-delay:0.5s}
+.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}.d4{transition-delay:0.4s}.d5{transition-delay:0.5s}
 
+/* MOBILE */
+@media(max-width:900px){
+  .footer-top{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .process-grid::before{display:none}
+}
 @media(max-width:768px){
   .nav-links{display:none}
   .hero-stats{flex-wrap:wrap;gap:1.5rem}
-  .services-grid{grid-template-columns:1fr}
+  .why-grid,.contact-grid{grid-template-columns:1fr}
   .why-visual{display:none}
-  .why-grid{grid-template-columns:1fr;gap:40px}
+  .trust-bar{gap:1.5rem;justify-content:flex-start}
+}
+@media(max-width:500px){
+  .footer-top{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  🔧 <strong>Free diagnostic check</strong> with every repair — Call <a href="tel:6137696535">(613) 769-6535</a> or <a href="booking.html">book online</a>
+</div>
+
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">AUTO<span>RAM</span></a>
   <ul class="nav-links">
+    <li><a href="#process">How It Works</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
     <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div style="display:flex;gap:0.75rem;align-items:center">
-    <a href="booking.html" class="nav-cta" style="background:transparent;border:1px solid var(--red);color:var(--red)">Book Online</a>
-    <a href="tel:6136135769" class="nav-cta">Call Now</a>
+  <div class="nav-btns">
+    <a href="booking.html" class="nav-outline">Book Online</a>
+    <a href="tel:6137696535" class="nav-cta">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-1px"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      (613) 769-6535
+    </a>
   </div>
 </nav>
 
@@ -207,24 +264,28 @@ footer p{font-size:13px;color:#666}
   <div class="hero-line"></div>
   <div class="hero-line2"></div>
   <div class="hero-content">
-    <div class="hero-tag">Ottawa's Trusted Auto Repair</div>
-    <h1>
-      <span class="line1">FIX IT</span>
-      <span class="line2">RIGHT.</span>
-      <span class="line3">EVERY TIME.</span>
+    <div class="hero-tag reveal">Ottawa's Trusted Auto Repair Shop</div>
+    <h1 class="reveal d1">
+      <span class="l1">FIX IT</span>
+      <span class="l2">RIGHT.</span>
+      <span class="l3">EVERY TIME.</span>
     </h1>
-    <p class="hero-sub">Expert mechanics. Honest pricing. <strong>Same-day service</strong> on brakes, engine, tires, oil changes & safety inspections — right here in Ottawa.</p>
-    <div class="hero-btns">
+    <p class="hero-sub reveal d2">Expert mechanics. Honest pricing. <strong>Same-day service</strong> on brakes, engine, tires, oil changes & safety inspections — at 1922 Merivale Rd, Ottawa.</p>
+    <div class="hero-btns reveal d3">
       <a href="booking.html" class="btn-primary">
         Book a Service
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="tel:6137696535" class="btn-secondary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Call Us
       </a>
     </div>
-    <div class="hero-stats">
+    <div class="hero-stats reveal d4">
+      <div>
+        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-label">Years in Ottawa</div>
+      </div>
       <div>
         <div class="stat-num">15<span>+</span></div>
         <div class="stat-label">Years Experience</div>
@@ -234,7 +295,7 @@ footer p{font-size:13px;color:#666}
         <div class="stat-label">Cars Repaired</div>
       </div>
       <div>
-        <div class="stat-num">4.9<span>★</span></div>
+        <div class="stat-num">4.5<span>★</span></div>
         <div class="stat-label">Google Rating</div>
       </div>
     </div>
@@ -243,138 +304,172 @@ footer p{font-size:13px;color:#666}
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
-  <div class="marquee-track" id="marquee">
-    <span class="marquee-item">Brake Repair<span class="dot">✦</span></span>
-    <span class="marquee-item">Engine Diagnostics<span class="dot">✦</span></span>
-    <span class="marquee-item">Oil Change<span class="dot">✦</span></span>
-    <span class="marquee-item">Tire Service<span class="dot">✦</span></span>
-    <span class="marquee-item">A/C Repair<span class="dot">✦</span></span>
-    <span class="marquee-item">Safety Inspection<span class="dot">✦</span></span>
-    <span class="marquee-item">Transmission<span class="dot">✦</span></span>
-    <span class="marquee-item">Suspension<span class="dot">✦</span></span>
-    <span class="marquee-item">Brake Repair<span class="dot">✦</span></span>
-    <span class="marquee-item">Engine Diagnostics<span class="dot">✦</span></span>
-    <span class="marquee-item">Oil Change<span class="dot">✦</span></span>
-    <span class="marquee-item">Tire Service<span class="dot">✦</span></span>
-    <span class="marquee-item">A/C Repair<span class="dot">✦</span></span>
-    <span class="marquee-item">Safety Inspection<span class="dot">✦</span></span>
-    <span class="marquee-item">Transmission<span class="dot">✦</span></span>
-    <span class="marquee-item">Suspension<span class="dot">✦</span></span>
+  <div class="marquee-track">
+    <span class="marquee-item">Brake Repair <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Engine Diagnostics <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Oil Change <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Tire Service <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">A/C Repair <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Safety Inspection <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Transmission <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Suspension <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Electrical Systems <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Brake Repair <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Engine Diagnostics <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Oil Change <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Tire Service <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">A/C Repair <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Safety Inspection <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Transmission <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Suspension <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Electrical Systems <span class="marquee-dot">✦</span></span>
   </div>
 </div>
+
+<!-- TRUST BADGES -->
+<div class="trust-bar">
+  <div class="trust-badge">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span><strong>Certified</strong> Technicians</span>
+  </div>
+  <div class="trust-badge">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+    <span>Ontario <strong>MTO Certified</strong></span>
+  </div>
+  <div class="trust-badge">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <span><strong>Warranty</strong> on All Work</span>
+  </div>
+  <div class="trust-badge">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <span><strong>Same-Day</strong> Service Available</span>
+  </div>
+</div>
+
+<!-- OUR PROCESS -->
+<section id="process" class="process-bg">
+  <div class="reveal"><div class="section-label">How It Works</div></div>
+  <h2 class="reveal d1">Simple <em>Process</em></h2>
+  <div class="process-grid">
+    <div class="process-step reveal d1">
+      <div class="process-num">01</div>
+      <h3>Drop Off</h3>
+      <p>Bring your vehicle in or book online. Walk-ins welcome — no appointment needed for most services.</p>
+    </div>
+    <div class="process-step reveal d2">
+      <div class="process-num">02</div>
+      <h3>Diagnose</h3>
+      <p>Our certified technicians perform a thorough inspection using the latest diagnostic equipment.</p>
+    </div>
+    <div class="process-step reveal d3">
+      <div class="process-num">03</div>
+      <h3>You Approve</h3>
+      <p>We explain what's needed in plain language and give you a clear quote before any work begins.</p>
+    </div>
+    <div class="process-step reveal d4">
+      <div class="process-num">04</div>
+      <h3>Pick Up</h3>
+      <p>Your vehicle is ready — usually same day. We call you when it's done. Pay, drive, done.</p>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services" class="services-bg">
   <div class="reveal"><div class="section-label">What We Do</div></div>
-  <h2 class="reveal reveal-delay-1">Our <em>Services</em></h2>
+  <h2 class="reveal d1">Our <em>Services</em></h2>
   <div class="services-grid">
-
     <div class="service-card reveal">
       <div class="service-num">01</div>
       <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="14" cy="38" r="8"/><circle cx="38" cy="38" r="8"/><path d="M6 38H2V20L10 8h28l8 12v18h-4M22 38H30M14 30h24M10 8v12h32V8"/></svg>
       <h3>Brake Service</h3>
       <p>Complete brake inspection, pad replacement, rotor resurfacing and fluid flush. Stop safely every time.</p>
     </div>
-
-    <div class="service-card reveal reveal-delay-1">
+    <div class="service-card reveal d1">
       <div class="service-num">02</div>
       <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="18" width="40" height="22" rx="2"/><path d="M14 18v-6a2 2 0 012-2h20a2 2 0 012 2v6M6 28h40M20 33h12M10 23h4M38 23h4"/></svg>
       <h3>Engine Diagnostics</h3>
-      <p>Advanced OBD2 scanning and full engine analysis. We find the problem fast and fix it right.</p>
+      <p>Advanced OBD2 scanning and full engine analysis. We find the root cause fast and fix it right.</p>
     </div>
-
-    <div class="service-card reveal reveal-delay-2">
+    <div class="service-card reveal d2">
       <div class="service-num">03</div>
       <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M26 10v6M26 36v6M10 26h6M36 26h6"/><circle cx="26" cy="26" r="10"/><circle cx="26" cy="26" r="4"/><path d="M14.93 14.93l4.24 4.24M32.83 32.83l4.24 4.24M14.93 37.07l4.24-4.24M32.83 19.17l4.24-4.24"/></svg>
       <h3>Oil Change</h3>
-      <p>Conventional, synthetic, or high-mileage oil — with a full multi-point inspection included at no extra charge.</p>
+      <p>Conventional, synthetic, or high-mileage oil — with a full multi-point inspection included.</p>
     </div>
-
-    <div class="service-card reveal reveal-delay-3">
+    <div class="service-card reveal d3">
       <div class="service-num">04</div>
       <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="26" cy="26" r="18"/><circle cx="26" cy="26" r="8"/><path d="M26 8v6M26 38v6M8 26h6M38 26h6"/><circle cx="26" cy="26" r="2" fill="currentColor"/></svg>
       <h3>Tire Service</h3>
-      <p>Mounting, balancing, rotation, and seasonal tire swaps. We stock a wide range of brands and sizes.</p>
+      <p>Mounting, balancing, rotation, and seasonal swaps. Wide range of brands and sizes in stock.</p>
     </div>
-
-    <div class="service-card reveal reveal-delay-4">
+    <div class="service-card reveal d4">
       <div class="service-num">05</div>
       <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 34c0-8 4-14 16-14s16 6 16 14"/><path d="M18 20c0-4 3-8 8-8s8 4 8 8"/><path d="M8 34h36M14 34v4M38 34v4M26 20v6"/><circle cx="26" cy="30" r="3"/></svg>
       <h3>A/C Repair</h3>
-      <p>Refrigerant recharge, leak detection, compressor and evaporator repair. Stay cool all summer long.</p>
+      <p>Refrigerant recharge, leak detection, compressor and evaporator repair. Stay cool all summer.</p>
     </div>
-
-    <div class="service-card reveal reveal-delay-5">
+    <div class="service-card reveal d5">
       <div class="service-num">06</div>
       <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 16h32v24H10zM16 16V10h20v6"/><path d="M20 28l4 4 8-8"/><path d="M10 22h32M10 34h32"/></svg>
       <h3>Safety Inspection</h3>
-      <p>Ontario certified safety inspections for used vehicle purchases and licence plate renewals. Fast turnaround.</p>
+      <p>Ontario certified safety inspections for used vehicle purchases and licence renewals. Fast turnaround.</p>
     </div>
-
+    <div class="service-card reveal">
+      <div class="service-num">07</div>
+      <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M26 6l4 14h14l-11 8 4 14-11-8-11 8 4-14L8 20h14z"/></svg>
+      <h3>Suspension</h3>
+      <p>Shocks, struts, ball joints, wheel alignment. Restore ride comfort and handling precision.</p>
+    </div>
+    <div class="service-card reveal d1">
+      <div class="service-num">08</div>
+      <svg class="service-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 26h6M36 26h6M26 10v6M26 36v6M15 15l4 4M33 33l4 4M33 15l-4 4M15 33l4 4"/><circle cx="26" cy="26" r="8"/></svg>
+      <h3>Electrical Systems</h3>
+      <p>Battery testing & replacement, alternator, starter, lighting — full electrical diagnostics.</p>
+    </div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section id="why">
+<section id="why" class="why-bg">
+  <div class="reveal"><div class="section-label">Why Choose Us</div></div>
+  <h2 class="reveal d1">Built on <em>Trust</em></h2>
   <div class="why-grid">
     <div>
-      <div class="reveal"><div class="section-label">Why Choose Us</div></div>
-      <h2 class="reveal reveal-delay-1">Built on <em>Trust</em></h2>
       <div class="why-list">
-        <div class="why-item reveal reveal-delay-2">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <h4>Certified Technicians</h4>
-            <p>All our mechanics are fully certified with years of hands-on experience across all makes and models.</p>
-          </div>
+        <div class="why-item reveal d1">
+          <div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Certified Technicians</h4><p>All our mechanics are fully certified with years of hands-on experience across all makes and models.</p></div>
         </div>
-        <div class="why-item reveal reveal-delay-3">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <div>
-            <h4>Same-Day Service</h4>
-            <p>We respect your time. Most repairs are completed same-day so you're back on the road fast.</p>
-          </div>
+        <div class="why-item reveal d2">
+          <div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><h4>Same-Day Service</h4><p>We respect your time. Most repairs are completed the same day you drop off — so you're back on the road fast.</p></div>
         </div>
-        <div class="why-item reveal reveal-delay-4">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <div>
-            <h4>Honest Pricing</h4>
-            <p>No surprises, no hidden fees. We give you a full quote upfront and only do what's necessary.</p>
-          </div>
+        <div class="why-item reveal d3">
+          <div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div><h4>Transparent Pricing</h4><p>No surprises. We give you a full written quote upfront — and only do work you've approved. No hidden fees, ever.</p></div>
         </div>
-        <div class="why-item reveal reveal-delay-5">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-          </div>
-          <div>
-            <h4>Warranty on All Work</h4>
-            <p>Every repair comes backed by our labour warranty. If something isn't right, we make it right.</p>
-          </div>
+        <div class="why-item reveal d4">
+          <div class="why-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><h4>Warranty on All Work</h4><p>Every repair is backed by our labour warranty. If something isn't right after we fix it, we make it right at no cost.</p></div>
         </div>
       </div>
     </div>
-
-    <div class="why-visual reveal reveal-delay-2">
+    <div class="why-visual reveal d2">
       <div class="big-number">5</div>
-      <div class="why-card-stack">
+      <div class="why-cards">
         <div class="why-card-main">
           <div class="num">5+</div>
-          <div class="label">Years in Ottawa</div>
+          <div class="lbl">Years Serving Ottawa</div>
         </div>
         <div class="why-cards-row">
           <div class="why-card-small">
             <div class="num">5K<span>+</span></div>
-            <div class="label">Cars Repaired</div>
+            <div class="lbl">Cars Repaired</div>
           </div>
           <div class="why-card-small">
-            <div class="num">4.9<span>★</span></div>
-            <div class="label">Avg. Rating</div>
+            <div class="num">4.5<span>★</span></div>
+            <div class="lbl">Google Rating</div>
           </div>
         </div>
       </div>
@@ -382,146 +477,217 @@ footer p{font-size:13px;color:#666}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="reviews" class="testimonials-bg">
-  <div class="reveal"><div class="section-label">Customer Reviews</div></div>
-  <h2 class="reveal reveal-delay-1">What They <em>Say</em></h2>
-  <div class="testi-grid">
+<!-- BRANDS WE SERVICE -->
+<section class="brands-bg" style="padding:60px 0">
+  <div style="padding:0 5%" class="reveal">
+    <div class="section-label">Makes We Service</div>
+    <h2 class="d1">All <em>Makes & Models</em></h2>
+  </div>
+  <div class="brands-strip" style="margin-top:3rem">
+    <div class="brands-track">
+      <span class="brand-item">Toyota</span><span class="brand-item">Honda</span><span class="brand-item">Ford</span><span class="brand-item">Chevrolet</span><span class="brand-item">BMW</span><span class="brand-item">Mercedes</span><span class="brand-item">Volkswagen</span><span class="brand-item">Hyundai</span><span class="brand-item">Kia</span><span class="brand-item">Nissan</span><span class="brand-item">Subaru</span><span class="brand-item">Mazda</span><span class="brand-item">Audi</span><span class="brand-item">Jeep</span><span class="brand-item">Ram</span><span class="brand-item">GMC</span>
+      <span class="brand-item">Toyota</span><span class="brand-item">Honda</span><span class="brand-item">Ford</span><span class="brand-item">Chevrolet</span><span class="brand-item">BMW</span><span class="brand-item">Mercedes</span><span class="brand-item">Volkswagen</span><span class="brand-item">Hyundai</span><span class="brand-item">Kia</span><span class="brand-item">Nissan</span><span class="brand-item">Subaru</span><span class="brand-item">Mazda</span><span class="brand-item">Audi</span><span class="brand-item">Jeep</span><span class="brand-item">Ram</span><span class="brand-item">GMC</span>
+    </div>
+  </div>
+</section>
 
-    <div class="testi-card reveal reveal-delay-1">
-      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-bg">
+  <div class="reveal"><div class="section-label">Customer Reviews</div></div>
+  <h2 class="reveal d1">What They <em>Say</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card reveal d1">
+      <div class="stars">★★★★★</div>
       <p class="testi-text">Bu çocuklar güvenilir ve gerçekten profesyonel. Arabanızı onlara gönül rahatlığıyla bırakabilirsiniz!</p>
       <div class="testi-author">
         <div class="testi-avatar">YC</div>
         <div>
           <div class="testi-name">Yasemin Cinar</div>
-          <div class="testi-car">
-            <svg width="12" height="12" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-            Google Review
-          </div>
+          <div class="testi-source"><svg width="12" height="12" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google Review</div>
         </div>
       </div>
     </div>
-
-    <div class="testi-card reveal reveal-delay-2">
-      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    <div class="testi-card reveal d2">
+      <div class="stars">★★★★★</div>
       <p class="testi-text">Auto Ram is a great auto repair shop! I'm really happy with their work. I always feel comfortable leaving my car here. Honest and reliable people.</p>
       <div class="testi-author">
         <div class="testi-avatar">GO</div>
         <div>
           <div class="testi-name">Gülsüm Oztomsuk</div>
-          <div class="testi-car">
-            <svg width="12" height="12" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-            Google Review
-          </div>
+          <div class="testi-source"><svg width="12" height="12" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google Review</div>
         </div>
       </div>
     </div>
-
-    <div class="testi-card reveal reveal-delay-3">
-      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    <div class="testi-card reveal d3">
+      <div class="stars">★★★★★</div>
       <p class="testi-text">It's a good spot with reasonable prices, I would say they solve the issue at the spot lots of time without any appointment, and my experience is always good in this repair shop.</p>
       <div class="testi-author">
         <div class="testi-avatar">EI</div>
         <div>
           <div class="testi-name">Eddy Idris</div>
-          <div class="testi-car">
-            <svg width="12" height="12" viewBox="0 0 24 24" style="vertical-align:-1px;margin-right:3px"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-            Google Review
-          </div>
+          <div class="testi-source"><svg width="12" height="12" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google Review</div>
         </div>
       </div>
     </div>
-
   </div>
-
-  <!-- Google Review CTA -->
-  <div style="text-align:center;margin-top:3rem" class="reveal">
-    <p style="color:var(--gray);font-size:14px;margin-bottom:1.2rem">Had a great experience? Let others know!</p>
-    <a href="https://search.google.com/local/writereview?placeid=ChIJ6wAg0aYHzkwRM85-cWlw7Rs" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(0,0,0,0.12);color:#1A1A1A;padding:14px 28px;text-decoration:none;font-weight:600;font-size:15px;transition:border-color 0.2s,background 0.2s"
-      onmouseover="this.style.borderColor='rgba(232,37,26,0.5)';this.style.background='#F0EFEB'"
-      onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.background='#fff'">
-      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+  <div class="review-cta reveal">
+    <p>Had a great experience? Let others know!</p>
+    <a href="https://search.google.com/local/writereview?placeid=ChIJ6wAg0aYHzkwRM85-cWlw7Rs" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
       Leave a Review on Google
     </a>
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="faq-bg">
+  <div class="reveal"><div class="section-label">FAQ</div></div>
+  <h2 class="reveal d1">Common <em>Questions</em></h2>
+  <div class="faq-list reveal d2">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do I need an appointment? <span class="arrow">+</span></button>
+      <div class="faq-a"><p>Walk-ins are welcome for most services including oil changes, tire swaps, and battery replacements. For larger jobs like engine repair or safety inspections, booking ahead ensures we can give your vehicle the time it deserves. You can book online in under 2 minutes.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How long does a typical repair take? <span class="arrow">+</span></button>
+      <div class="faq-a"><p>Most routine services (oil change, tire rotation, brake pads) are done within 1–2 hours. Larger repairs like engine work or A/C service typically take 2–4 hours. We'll give you a time estimate before we begin and call you as soon as your vehicle is ready.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you offer a warranty on repairs? <span class="arrow">+</span></button>
+      <div class="faq-a"><p>Yes. All labour and parts we supply are covered by our warranty. If an issue reoccurs after we've fixed it, bring it back and we'll make it right at no charge. Specific warranty terms depend on the type of repair — ask us at the time of service.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept? <span class="arrow">+</span></button>
+      <div class="faq-a"><p>We accept cash, all major credit and debit cards (Visa, Mastercard, AMEX), and e-Transfer. Payment is due upon pickup of your vehicle.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you service all makes and models? <span class="arrow">+</span></button>
+      <div class="faq-a"><p>Yes — we service all makes and models including domestic vehicles (Ford, GM, Chrysler), Japanese brands (Toyota, Honda, Subaru, Mazda), and European vehicles (BMW, Audi, Volkswagen, Mercedes). Both gas and hybrid vehicles welcome.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I get an estimate before bringing my car in? <span class="arrow">+</span></button>
+      <div class="faq-a"><p>Absolutely. Call us at <a href="tel:6137696535" style="color:var(--red)">(613) 769-6535</a> and describe your issue — we'll give you a ballpark estimate over the phone. For a precise quote, a quick diagnostic check is usually needed once the vehicle is in. The diagnostic is free with any repair.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="contact-bg">
   <div class="reveal"><div class="section-label">Find Us</div></div>
-  <h2 class="reveal reveal-delay-1">Visit <em>AUTORAM</em></h2>
+  <h2 class="reveal d1">Visit <em>AUTORAM</em></h2>
   <div class="contact-grid">
     <div class="contact-info">
-      <div class="contact-item reveal reveal-delay-2">
-        <div class="contact-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <div>
-          <h4>Address</h4>
-          <a href="https://maps.google.com/?q=1922+Merivale+Rd+Ottawa+ON" target="_blank">1922 Merivale Rd, Ottawa, ON K2G 1E8</a>
-        </div>
+      <div class="contact-item reveal d2">
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h4>Address</h4><a href="https://maps.google.com/?q=1922+Merivale+Rd+Ottawa+ON" target="_blank">1922 Merivale Rd, Unit B<br>Ottawa, ON K2G 1E8</a></div>
       </div>
-      <div class="contact-item reveal reveal-delay-3">
-        <div class="contact-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </div>
-        <div>
-          <h4>Phone</h4>
-          <a href="tel:6137696535">(613) 769-6535</a>
-        </div>
+      <div class="contact-item reveal d3">
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><h4>Phone</h4><a href="tel:6137696535">(613) 769-6535</a></div>
       </div>
-      <div class="contact-item reveal reveal-delay-4">
-        <div class="contact-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div>
-          <h4>Email</h4>
-          <a href="mailto:info@autoram.ca">info@autoram.ca</a>
-        </div>
+      <div class="contact-item reveal d4">
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><h4>Email</h4><a href="mailto:info@autoram.ca">info@autoram.ca</a></div>
       </div>
-
-      <table class="hours-table reveal reveal-delay-5">
-        <tr><td>Monday</td><td>9:00 AM – 5:00 PM</td></tr>
-        <tr><td>Tuesday</td><td>9:00 AM – 5:00 PM</td></tr>
-        <tr><td>Wednesday</td><td>9:00 AM – 5:00 PM</td></tr>
-        <tr><td>Thursday</td><td>9:00 AM – 5:00 PM</td></tr>
-        <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td></tr>
+      <table class="hours-table reveal d5">
+        <tr><td>Monday – Friday</td><td>9:00 AM – 5:00 PM</td></tr>
         <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
         <tr><td>Sunday</td><td>Closed</td></tr>
       </table>
     </div>
-
-    <div class="map-placeholder reveal reveal-delay-3">
-      <svg class="map-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <div class="map-address">
-        1922 Merivale Rd
-        <span>Ottawa, ON K2G 1E8</span>
-      </div>
-      <a href="https://maps.google.com/?q=1922+Merivale+Rd+Ottawa+ON+K2G+1E8" target="_blank" class="map-link">
-        Get Directions
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+    <div class="reveal d2" style="min-height:400px">
+      <iframe class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.1!2d-75.7212!3d45.3283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cd507a6d0200aeb%3A0x1bed7069717fcee3!2s1922%20Merivale%20Rd%2C%20Nepean%2C%20ON%20K2G%201E8!5e0!3m2!1sen!2sca!4v1700000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">AUTO<span>RAM</span></div>
-  <p>© 2026 AUTORAM. 1922 Merivale Rd, Ottawa, ON.</p>
-  <p style="font-size:12px;color:#888">Professional Auto Repair</p>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">AUTO<span>RAM</span></div>
+      <p>Ottawa's trusted auto repair shop on Merivale Rd. Honest mechanics, fair prices, same-day service since 2020.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#services">Brake Service</a>
+      <a href="#services">Engine Diagnostics</a>
+      <a href="#services">Oil Change</a>
+      <a href="#services">Tire Service</a>
+      <a href="#services">A/C Repair</a>
+      <a href="#services">Safety Inspection</a>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="booking.html">Book Online</a>
+      <a href="#process">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="admin.html">Admin</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="tel:6137696535">(613) 769-6535</a>
+      <a href="mailto:info@autoram.ca">info@autoram.ca</a>
+      <a href="https://maps.google.com/?q=1922+Merivale+Rd+Ottawa" target="_blank">1922 Merivale Rd, Unit B<br>Ottawa, ON K2G 1E8</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 AUTORAM. All rights reserved.</span>
+    <span>1922 Merivale Rd, Ottawa, ON K2G 1E8</span>
+    <a href="https://search.google.com/local/writereview?placeid=ChIJ6wAg0aYHzkwRM85-cWlw7Rs" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none">Leave a Google Review</a>
+  </div>
 </footer>
 
-<script>
-// Nav scroll
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+<!-- FLOATING CALL BUTTON -->
+<div class="float-call">
+  <a href="tel:6137696535" class="float-btn" title="Call AUTORAM">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+  <div class="float-label">Call Now</div>
+</div>
 
-// Reveal
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+<script>
+// Nav offset for announcement bar
+const annBar = document.querySelector('.announce-bar');
+const nav = document.getElementById('nav');
+function updateNav(){
+  const barH = annBar ? annBar.offsetHeight : 0;
+  if(window.scrollY > barH){
+    nav.style.top = '0';
+    nav.classList.add('scrolled');
+  } else {
+    nav.style.top = (barH - window.scrollY) + 'px';
+    nav.classList.remove('scrolled');
+  }
+}
+window.addEventListener('scroll', updateNav);
+updateNav();
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// FAQ accordion
+function toggleFaq(btn){
+  const item = btn.parentElement;
+  const ans = item.querySelector('.faq-a');
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.parentElement.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if(!isOpen){
+    btn.classList.add('open');
+    ans.style.maxHeight = ans.scrollHeight + 'px';
+  }
+}
 </script>
 </body>
 </html>
